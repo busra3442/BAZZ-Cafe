@@ -1,4 +1,4 @@
-# ☕ BAZ KAFE | İnternet Teknolojileri Projesi
+# ☕ BAZZ KAFE | İnternet Teknolojileri Projesi
 
 ![Proje Durumu](https://img.shields.io/badge/Durum-Tamamland%C4%B1-success)
 ![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=flat&logo=html5&logoColor=white)
