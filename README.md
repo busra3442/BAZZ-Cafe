@@ -5,7 +5,6 @@
 ![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)
 
-> "Kampüsün kalbinde sanat, satranç ve nitelikli kahvenin buluşma noktası."
 
 Bu proje, **İnternet Teknolojileri** dersi kapsamında modern web tasarım standartları (UI/UX) gözetilerek sıfırdan geliştirilmiş, statik fakat etkileşimli bir kafe web sitesidir. Hazır framework'ler (Bootstrap vb.) kullanılmadan, tamamen Vanilla JS, HTML5 ve CSS3 (Grid/Flexbox) mimarisiyle kodlanmıştır.
 
@@ -46,6 +45,6 @@ Proje, birbirine entegre 6 farklı modüler HTML sayfasından oluşmaktadır:
 
 Projeyi kendi bilgisayarınızda yerel olarak çalıştırmak için ekstra bir kuruluma veya paket yöneticisine ihtiyaç yoktur:
 
-1. Repoyu bilgisayarınıza klonlayın:
+1. Repoyu klonlayın:
    ```bash
    git clone [https://github.com/kullanici-adiniz/proje-adi.git](https://github.com/kullanici-adiniz/proje-adi.git)
