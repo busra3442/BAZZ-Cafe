@@ -1,0 +1,590 @@
+:root {
+    --dark-emerald: #0b221e;
+    --forest-green: #1a3c34;
+    --sage-green: #4a7c6d;
+    --gold: #d4af37;
+    --cream: #f8f9f5;
+    --white: #ffffff;
+
+    --nav-dark: #1b4532;
+    --nav-mid: #2d6a4f;
+    --nav-accent: #52b788;
+    --nav-pale: #b7e4c7;
+    --text-dark: #1c1c18;
+    --radius-btn: 50px;
+    --transition-smooth: .25s ease;
+    --primary-color: #3C2A21;
+    --accent-color: #D4A373;
+    --white: #ffffff;
+    --bg-light: #FAF9F6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-emerald);
+    color: var(--cream);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+.quote {
+    font-family: 'Playfair Display', serif;
+}
+
+
+/* ── NAVBAR ── */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 70px;
+    background: var(--nav-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 52px;
+    box-shadow: 0 2px 20px rgba(27, 69, 50, .4);
+}
+
+.nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.65rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: .04em;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    user-select: none;
+}
+
+.nav-logo span {
+    color: var(--nav-pale);
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, .68);
+    font-size: .84rem;
+    font-weight: 500;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    transition: color var(--transition-smooth);
+}
+
+.nav-links a:hover {
+    color: var(--nav-pale);
+}
+
+.nav-cta {
+    background: transparent;
+    border: 1.5px solid var(--nav-accent);
+    color: var(--nav-accent);
+    padding: 8px 22px;
+    border-radius: var(--radius-btn);
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background var(--transition-smooth), color var(--transition-smooth), transform .18s;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.nav-cta:hover {
+    background: var(--nav-accent);
+    color: var(--nav-dark);
+    transform: translateY(-1px);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+}
+
+/* --- CINEMATIC HERO SECTION --- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(26, 60, 52, 0.7), rgba(26, 60, 52, 0.7)),
+        url(hakkimda-images/arkaplan1.webp);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    filter: brightness(0.4) contrast(1.1);
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: clamp(3rem, 10vw, 6rem);
+    letter-spacing: 12px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    animation: fadeInDown 1.5s ease;
+    color: var(--white);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--gold);
+    animation: fadeInUp 1.5s ease;
+    letter-spacing: 2px;
+}
+
+/* --- SCROLL REVEAL SECTIONS --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.reveal-section {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    margin: 150px 0;
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.reveal-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-section:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.image-wrapper {
+    flex: 1.2;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    display: block;
+    transition: transform 1.5s ease;
+}
+
+.reveal-section.active .image-wrapper img {
+    transform: scale(1.05);
+}
+
+/* Dekoratif altın kutu */
+.image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: -20px;
+    border: 2px solid var(--gold);
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.text-wrapper {
+    flex: 1;
+}
+
+.text-wrapper span {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.text-wrapper h2 {
+    font-size: 3.5rem;
+    margin: 15px 0 30px;
+    line-height: 1.1;
+}
+
+.text-wrapper p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #b0b0b0;
+}
+
+/* --- MODERN GRID INFO --- */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: 100px 0;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 50px 40px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    transition: 0.5s;
+}
+
+.info-card:hover {
+    background: var(--forest-green);
+    border-color: var(--gold);
+    transform: translateY(-10px);
+}
+
+.info-card i {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom:
+        30px;
+}
+
+.info-card h3 {
+    margin-bottom: 15px;
+    /* Değeri isteğine göre artırıp azaltabilirsin */
+}
+
+/* --- PARALLAX QUOTE --- */
+.parallax-quote {
+    height: 500px;
+    background: linear-gradient(rgba(11, 34, 30, 0.85), rgba(11, 34, 30, 0.85)),
+        url('hakkimda-images/baz_arka2.webp');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 100px 0;
+}
+
+.parallax-quote h3 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    max-width: 900px;
+    font-style: italic;
+    padding: 0 40px;
+}
+
+/* --- INTERACTIVE GALLERY --- */
+.gallery-container {
+    padding: 100px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 10);
+    grid-auto-rows: 300px;
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item.wide {
+    grid-column: span 2;
+}
+
+.gallery-item.tall {
+    grid-row: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(80%) brightness(0.7);
+    transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item:hover img {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.1);
+}
+
+/* Yukarıdan aşağıya yumuşak geçiş (H1 için) */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+        /* 30 piksel yukarıdan başla */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        /* Orijinal konumuna gel */
+    }
+}
+
+/* Aşağıdan yukarıya yumuşak geçiş (P için) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+        /* 30 piksel aşağıdan başla */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        /* Orijinal konumuna gel */
+    }
+}
+
+footer {
+    background: var(--nav-dark);
+    color: rgba(255, 255, 255, .82);
+    /* .65 → .82 */
+    padding: 58px 52px 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.65rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: .04em;
+}
+
+.footer-brand span {
+    color: var(--nav-pale);
+}
+
+.footer-desc {
+    font-size: .87rem;
+    line-height: 1.75;
+    max-width: 255px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.soc {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .95rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: background var(--transition-smooth), transform .2s;
+}
+
+.soc:hover {
+    background: var(--nav-mid);
+    transform: scale(1.1);
+}
+
+.footer-col h4 {
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 18px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col li {
+    margin-bottom: 10px;
+    font-size: .875rem;
+    cursor: pointer;
+    transition: color var(--transition-smooth);
+}
+
+.footer-col li:hover {
+    color: var(--nav-pale);
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 26px;
+    font-size: .78rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, .68);
+    /* .42 → .68 */
+    text-decoration: none;
+    transition: color var(--transition-smooth);
+}
+
+.footer-links a:hover {
+    color: var(--nav-pale);
+}
+
+.pulse-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: var(--nav-accent);
+    border-radius: 50%;
+    margin-right: 6px;
+    animation: pulse 2.2s ease-in-out infinite;
+}
+
+@media (max-width: 880px) {
+
+    nav {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--nav-dark);
+        padding: 0 20px;
+        gap: 0;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+        z-index: 99;
+    }
+
+    .nav-links.active {
+        max-height: 500px;
+        padding: 30px 20px;
+        gap: 25px;
+    }
+
+    .nav-links li a {
+        font-size: 1.1rem;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .nav-links.active li a {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-cta {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--nav-dark);
+        padding: 20px;
+        gap: 20px;
+        z-index: 99;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    footer {
+        padding: 40px 20px 24px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.footer-col a,
+.footer-col a:visited {
+    color: #ffffff;
+    /* Buraya istediğiniz renk kodunu yazabilirsiniz */
+    text-decoration: none;
+    /* Linklerin altındaki varsayılan çizgiyi kaldırır */
+}
+
+/* Fareyle üzerine gelindiğinde renginin hafifçe değişmesi için (İsteğe bağlı) */
+.footer-col a:hover {
+    color: #d1b48c;
+    /* Kahve tonlarında bir hover rengi örneği */
+}

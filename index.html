@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BAZ COFFEE - En taze çekirdekler ve artizan tatlılarla güne başlayın.">
+    <title>Anasayfa | BAZ COFFEE</title>
+
+    <!-- 1. LCP Optimizasyonu: İlk slide görselini önceden yükle -->
+    <link rel="preload" as="image" href="images/menu1.webp" fetchpriority="high">
+
+    <!-- 2. Font Optimizasyonu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome'ı asenkron yükle -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-logo">☕ <span>Bazz</span> Café</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="menu.html">Menü</a></li>
+            <li><a href="hakkimda.html">Hakkımızda</a></li>
+            <li><a href="etkinlikler.html">Etkinlikler</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+            <li><a href="oyun.html">Şans Oyunu</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" aria-label="Menüyü Aç" role="button"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <!-- 5'li Slider Bölümü -->
+    <section class="slider-container">
+        <div class="slider">
+            <div class="slide active"
+                style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/menu1.webp');">
+                <div class="slide-content">
+                    <h1>Güne Bir Yudum Mutlulukla Başla</h1>
+                    <p>En taze çekirdeklerden özenle hazırlanan kahvelerimizle tanışın.</p>
+                    <a href="menu.html" class="btn">Menüyü İncele</a>
+                </div>
+            </div>
+
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/uretkenlik.webp');">
+                <div class="slide-content">
+                    <h1>Üretkenliğin Yeni Adresi</h1>
+                    <p>Sessiz alanlarımız ve yüksek hızlı internetimizle işlerinize odaklanın.</p>
+                    <a href="hakkimda.html" class="btn">Alanlarımızı Gör</a>
+                </div>
+            </div>
+
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/tatliEslikci.webp');">
+                <div class="slide-content">
+                    <h1>Kahvenin En Tatlı Eşlikçileri</h1>
+                    <p>Günlük taze çıkan artizan tatlılarımızla kendinizi şımartın.</p>
+                    <a href="menu.html" class="btn">Lezzetleri Keşfet</a>
+                </div>
+            </div>
+
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/etkinlik-foto1.webp');">
+                <div class="slide-content">
+                    <h1>Paylaşılacak Anlar Biriktirin</h1>
+                    <p>Sevdiklerinizle en keyifli sohbetlerinize ev sahipliği yapıyoruz.</p>
+                    <a href="iletisim.html" class="btn">Bize Katılın</a>
+                </div>
+            </div>
+
+            <div class="slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/demleme1\ \(1\).webp');">
+                <div class="slide-content">
+                    <h1>Ustalıkla Kavrulmuş Çekirdekler</h1>
+                    <p>Kahve sanatını her fincanda yeniden keşfeden uzman kadromuzla tanışın.</p>
+                    <a href="hakkimda.html" class="btn">Hikayemiz</a>
+                </div>
+            </div>
+        </div>
+
+        <button class="prev-btn" aria-label="Önceki Slide"><i class="fas fa-chevron-left"></i></button>
+        <button class="next-btn" aria-label="Sonraki Slide"><i class="fas fa-chevron-right"></i></button>
+
+        <div class="dots-container">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <section class="interactive-features">
+        <div class="section-title">
+            <span class="sub-title">Neden Biz?</span>
+            <h2>Kalitenin Arkasındaki Sırlar</h2>
+        </div>
+
+        <div class="coffee-showcase">
+            <div class="feature-side left">
+                <div class="feature-item reveal-left">
+                    <div class="text">
+                        <h4>Taze Kavurma</h4>
+                        <p>Haftalık olarak az miktarlarda kavuruyoruz.</p>
+                    </div>
+                    <div class="icon"><i class="fas fa-fire"></i></div>
+                </div>
+                <div class="feature-item reveal-left">
+                    <div class="text">
+                        <h4>%100 Arabica</h4>
+                        <p>En seçkin tarlalardan toplanan çekirdekler.</p>
+                    </div>
+                    <div class="icon"><i class="fas fa-seedling"></i></div>
+                </div>
+                <div class="feature-item reveal-left">
+                    <div class="text">
+                        <h4>Eşsiz Aroma</h4>
+                        <p>Düşük asidite ve yoğun gövdeli tadım notları.</p>
+                    </div>
+                    <div class="icon"><i class="fas fa-wind"></i></div>
+                </div>
+            </div>
+
+            <div class="coffee-cup-wrapper">
+                <div class="glow-effect"></div>
+                <img src="images/hotCoffe (1).webp" alt="Sıcak Kahve Fincanı" class="floating-cup" width="300"
+                    height="300" decoding="async" loading="lazy">
+                <div class="cup-shadow"></div>
+            </div>
+
+            <div class="feature-side right">
+                <div class="feature-item reveal-right">
+                    <div class="icon"><i class="fas fa-tint"></i></div>
+                    <div class="text">
+                        <h4>Arıtılmış Su</h4>
+                        <p>Kahvenin tadını bozmayan özel filtrasyon sistemi.</p>
+                    </div>
+                </div>
+                <div class="feature-item reveal-right">
+                    <div class="icon"><i class="fas fa-mug-hot"></i></div>
+                    <div class="text">
+                        <h4>Doğru Sıcaklık</h4>
+                        <p>92°C-96°C aralığında hassas demleme tekniği.</p>
+                    </div>
+                </div>
+                <div class="feature-item reveal-right">
+                    <div class="icon"><i class="fas fa-user-tie"></i></div>
+                    <div class="text">
+                        <h4>Usta Baristalar</h4>
+                        <p>Eğitimli baristalarımızla her fincanda lezzet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">☕ <span>Bazz</span> Café</div>
+                <p class="footer-desc">Her fincanımızda sevgi, özen ve kalite bir arada. Sizin için en iyi deneyimi
+                    sunmayı hedefliyoruz.</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="soc"
+                        aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="soc"
+                        aria-label="Twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer" class="soc"
+                        aria-label="İletişim">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Menü</h4>
+                <ul>
+                    <li><a href="menu.html">Sıcak İçecekler</a></li>
+                    <li><a href="menu.html">Soğuk İçecekler</a></li>
+                    <li><a href="menu.html">Sıcak Kahveler</a></li>
+                    <li><a href="menu.html">Soğuk Kahveler</a></li>
+                    <li><a href="menu.html">Tatlılar</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Bilgi</h4>
+                <ul>
+                    <li><a href="hakkimda.html">Hakkımda</a></li>
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="etkinlikler.html">Etkinlikler</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>İletişim</h4>
+                <ul>
+                    <li>📍 Sivas, Türkiye</li>
+                    <li>📞 0352 000 00 00</li>
+                    <li>✉️ info@bazzcafe.com</li>
+                    <li><span class="pulse-dot"></span>Açık · 08:00–22:00</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Bazz Café. Tüm hakları saklıdır.</span>
+            <div class="footer-links">
+                <a href="#">Gizlilik Politikası</a>
+                <a href="#">Kullanım Koşulları</a>
+            </div>
+        </div>
+
+
+        <div id="category-detail-section" class="section-wrap" style="display: none;">
+            <button id="back-to-cats" class="back-btn">← Kategorilere Dön</button>
+            <div id="category-detail-title" class="section-title">Ürünler</div>
+            <div id="product-grid" class="featured-grid">
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>

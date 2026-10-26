@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="BAZ COFFEE Kahve Tarlası oyunu ile şansını dene, sürpriz indirim kuponları kazan!">
+    <title>Kahve Tarlası | BAZ COFFEE</title>
+    <link rel="stylesheet" href="oyun.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-logo">☕ <span>Bazz</span> Café</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="menu.html">Menü</a></li>
+            <li><a href="hakkimda.html">Hakkımızda</a></li>
+            <li><a href="etkinlikler.html">Etkinlikler</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+            <li><a href="oyun.html">Şans Oyunu</a></li>
+
+        </ul>
+        <div class="hamburger" id="hamburger" aria-label="Menüyü Aç" role="button"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <header class="events-hero">
+        <img src="images/oyun.webp" alt="Kahve Tarlası" fetchpriority="high"
+            style="position:absolute; width:100%; height:100%; object-fit:cover;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-subtitle">BİRAZ EĞLENCE</div>
+            <h1>Kahve Tarlası</h1>
+            <div class="hero-divider"></div>
+        </div>
+    </header>
+
+    <main class="contact-container">
+        <div class="game-wrapper">
+            <div class="game-info">
+                <p>Güvenli alanlara tıkla, dökülen kahvelere yakalanmadan ödülü kap!</p>
+                <div class="stats-bar">
+                    <span>Kalan Hak: <strong id="remaining-lives">2</strong></span>
+                    <span>Hedef: <strong id="safe-needed">0</strong> Kare</span>
+                </div>
+            </div>
+
+            <div id="game-board"></div>
+
+            <!-- Ödül Modalı -->
+            <div id="reward-modal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <i class="fas fa-trophy" style="font-size: 3rem; color: #D4A373; margin-bottom: 15px;"></i>
+                    <h2>Tebrikler!</h2>
+                    <p id="reward-text" style="font-weight: 600; font-size: 1.2rem; color: #1b4532; margin: 10px 0;">
+                    </p>
+                    <p>Kodunuz:</p>
+                    <div class="promo-box" id="promo-code">BAZ-XXXX</div>
+                    <p style="color: #d63031; font-size: 0.8rem; font-weight: bold;">
+                        <i class="fas fa-history"></i> Bu kod 24 saat boyunca geçerlidir.
+                    </p>
+                    <button onclick="location.reload()" class="submit-btn"
+                        style="margin-top: 15px; width: 100%;">Tamam</button>
+                </div>
+            </div>
+
+            <div id="fail-modal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <i class="fas fa-heart-broken" style="font-size: 3rem; color: #d63031; margin-bottom: 15px;"></i>
+                    <h2>Eyvah, Kahve Döküldü!</h2>
+                    <p style="margin: 10px 0; color: #555;">Dikkatli adımlarla ilerlemelisin. Üzülme, şansını tekrar
+                        dene!</p>
+                    <button onclick="location.reload()" class="submit-btn"
+                        style="margin-top: 15px; width: 100%; background: #d63031;">Tekrar Dene</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <audio id="bg-music" loop>
+        <source src="music/Şebnem Ferah - Mayın Tarlası (Official Video).mp3" type="audio/mpeg">
+    </audio>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">☕ <span>Bazz</span> Café</div>
+                <p class="footer-desc">Her fincanımızda sevgi, özen ve kalite bir arada. Sizin için en iyi deneyimi
+                    sunmayı hedefliyoruz.</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="soc"
+                        aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="soc"
+                        aria-label="Twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer" class="soc"
+                        aria-label="İletişim">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Menü</h3>
+                <ul>
+                    <li><a href="menu.html">Sıcak İçecekler</a></li>
+                    <li><a href="menu.html">Soğuk İçecekler</a></li>
+                    <li><a href="menu.html">Sıcak Kahveler</a></li>
+                    <li><a href="menu.html">Soğuk Kahveler</a></li>
+                    <li><a href="menu.html">Tatlılar</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Bilgi</h3>
+                <ul>
+                    <li><a href="hakkimda.html">Hakkımda</a></li>
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="etkinlikler.html">Etkinlikler</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>İletişim</h3>
+                <ul>
+                    <li>📍 Sivas, Türkiye</li>
+                    <li>📞 0352 000 00 00</li>
+                    <li>✉️ info@bazzcafe.com</li>
+                    <li><span class="pulse-dot"></span>Açık · 08:00–22:00</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Bazz Cafe. Tüm hakları saklıdır.</span>
+            <div class="footer-links">
+                <a href="#">Gizlilik Politikası</a>
+                <a href="#">Kullanım Koşulları</a>
+            </div>
+        </div>
+
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="oyun.js" defer></script>
+</body>
+
+</html>

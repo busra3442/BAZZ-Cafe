@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bazz Café — Menü</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="menu.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-logo">☕ <span>Bazz</span> Café</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="menu.html">Menü</a></li>
+            <li><a href="hakkimda.html">Hakkımızda</a></li>
+            <li><a href="etkinlikler.html">Etkinlikler</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+            <li><a href="oyun.html">Şans Oyunu</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" aria-label="Menüyü Aç" role="button"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <header class="events-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero">
+            <div class="hero-eyebrow">Günlük Taze · El Yapımı</div>
+            <h1>Menümüzü <em>Keşfedin</em></h1>
+            <div class="hero-divider"></div>
+            <p>Her yudumda özenle hazırlanmış lezzetler</p>
+        </div>
+    </header>
+
+    <div class="section-wrap" id="categories-section">
+        <div class="section-eyebrow">Kategoriler</div>
+        <div class="section-title">Ne içmek istersiniz?</div>
+        <div class="cat-grid">
+            <div class="cat-card" data-category="sicak-icecekler">
+                <div class="cat-img-area">
+                    <img src="menu-images/cay2.webp" alt="Sıcak İçecekler" width="400" height="220" loading="eager"
+                        fetchpriority="high" decoding="sync">
+                    <div class="cat-overlay">
+                        <span class="cat-name">Sıcak İçecekler</span>
+                        <span class="cat-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cat-card" data-category="soguk-icecekler">
+                <div class="cat-img-area">
+                    <img src="menu-images/sogukİcecek1.webp" alt="Soğuk İçecekler" width="400" height="220"
+                        loading="eager" decoding="sync">
+                    <div class="cat-overlay">
+                        <span class="cat-name">Soğuk İçecekler</span>
+                        <span class="cat-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cat-card" data-category="sicak-kahveler">
+                <div class="cat-img-area">
+                    <img src="menu-images/sicakKahve.webp" alt="Sıcak Kahveler" width="400" height="220" loading="eager"
+                        decoding="sync">
+                    <div class="cat-overlay">
+                        <span class="cat-name">Sıcak Kahveler</span>
+                        <span class="cat-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cat-card" data-category="soguk-kahveler">
+                <div class="cat-img-area">
+                    <img src="menu-images/sogukKahve.webp" alt="Soğuk Kahveler" width="400" height="220" loading="eager"
+                        decoding="sync">
+                    <div class="cat-overlay">
+                        <span class="cat-name">Soğuk Kahveler</span>
+                        <span class="cat-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cat-card--wide" data-category="tatlilar">
+                <div class="cat-img-area">
+                    <img src="menu-images/kruvasan1.webp" alt="Tatlılar" width="1200" height="180" loading="lazy"
+                        decoding="sync">
+                    <div class="cat-overlay">
+                        <span class="cat-name">Tatlılar</span>
+                        <span class="cat-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="category-detail-section" class="category-detail-wrap" style="display: none;">
+        <div class="category-detail-inner">
+            <div class="category-detail-header">
+                <button id="back-to-cats" class="back-btn">
+                    <span class="back-arrow">←</span> Kategorilere Dön
+                </button>
+                <div id="category-detail-title" class="section-title" style="margin-bottom:0;"></div>
+            </div>
+            <div id="product-grid"></div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="featured-section">
+        <div class="section-eyebrow">Özel Seçimler</div>
+        <div class="section-title">Öne Çıkan Lezzetler</div>
+        <div class="featured-grid">
+            <div class="feat-card">
+                <div class="feat-img">
+                    <div class="feat-badge">Çok Satan</div>
+                    <img src="menu-images/medovik.webp" alt="Medovik" width="400" height="196" loading="lazy"
+                        decoding="async">
+                </div>
+                <div class="feat-body">
+                    <div class="feat-cat">Tatlılar</div>
+                    <div class="feat-name">Medovik</div>
+                    <div class="feat-desc">Sekiz ince katmanlı bal keki ve hafif krema</div>
+                    <div class="feat-footer">
+                        <div class="feat-price">₺340 <small>/ servis</small></div>
+                    </div>
+                </div>
+            </div>
+            <div class="feat-card">
+                <div class="feat-img">
+                    <img src="menu-images/brownie.webp" alt="Brownie" width="400" height="196" loading="lazy"
+                        decoding="async">
+                </div>
+                <div class="feat-body">
+                    <div class="feat-cat">Tatlılar</div>
+                    <div class="feat-name">Brownie</div>
+                    <div class="feat-desc">Belçika çikolatalı, yoğun ve yumuşak tat.</div>
+                    <div class="feat-footer">
+                        <div class="feat-price">₺320 <small>/Dondurma ile servis edilir</small></div>
+                    </div>
+                </div>
+            </div>
+            <div class="feat-card">
+                <div class="feat-img">
+                    <div class="feat-badge"></div>
+                    <img src="menu-images/tiramisu.webp" alt="Tiramisu" width="400" height="196" loading="lazy"
+                        decoding="async">
+                </div>
+                <div class="feat-body">
+                    <div class="feat-cat">Tatlılar</div>
+                    <div class="feat-name">Tiramisu</div>
+                    <div class="feat-desc">Espresso aromalı, gerçek maskarpone peynirli..</div>
+                    <div class="feat-footer">
+                        <div class="feat-price">₺320 <small>/ porsiyon</small></div>
+                    </div>
+                </div>
+            </div>
+            <div class="feat-card">
+                <div class="feat-img">
+                    <div class="feat-badge"></div>
+                    <img src="menu-images/sebastian.webp" alt="San Sebastian" width="400" height="196" loading="lazy"
+                        decoding="async">
+                </div>
+                <div class="feat-body">
+                    <div class="feat-cat">Tatlılar</div>
+                    <div class="feat-name">San Sebastian</div>
+                    <div class="feat-desc">Akışkan dokulu çikolata soslu özel cheesecake.</div>
+                    <div class="feat-footer">
+                        <div class="feat-price">₺360 <small>/ bardak</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">☕ <span>Bazz</span> Café</div>
+                <p class="footer-desc">Her fincanımızda sevgi, özen ve kalite bir arada. Sizin için en iyi deneyimi
+                    sunmayı hedefliyoruz.</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="soc"
+                        aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="soc"
+                        aria-label="Twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer" class="soc"
+                        aria-label="İletişim">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Menü</h4>
+                <!-- DÜZELTME 1: <a> <li> içine alındı, <li> artık <ul> içinde -->
+                <ul>
+                    <li><a href="menu.html">Sıcak İçecekler</a></li>
+                    <li><a href="menu.html">Soğuk İçecekler</a></li>
+                    <li><a href="menu.html">Sıcak Kahveler</a></li>
+                    <li><a href="menu.html">Soğuk Kahveler</a></li>
+                    <li><a href="menu.html">Tatlılar</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Bilgi</h4>
+                <ul>
+                    <li><a href="hakkimda.html">Hakkımda</a></li>
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="etkinlikler.html">Etkinlikler</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>İletişim</h4>
+                <ul>
+                    <li>📍 Sivas, Türkiye</li>
+                    <li>📞 0352 000 00 00</li>
+                    <li>✉️ info@bazzcafe.com</li>
+                    <li><span class="pulse-dot"></span>Açık · 08:00–22:00</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Bazz Café. Tüm hakları saklıdır.</span>
+            <div class="footer-links">
+                <a href="#">Gizlilik Politikası</a>
+                <a href="#">Kullanım Koşulları</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js" defer></script>
+</body>
+
+</html>
