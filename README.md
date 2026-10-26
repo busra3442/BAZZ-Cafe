@@ -14,6 +14,9 @@ Bu proje, **İnternet Teknolojileri** dersi kapsamında modern web tasarım stan
 
 <img width="1470" height="797" alt="Ekran Resmi 2026-10-26 17 42 10" src="https://github.com/user-attachments/assets/e5aaa9e2-d691-4e7d-95fd-f59777362d69" />
 
+**🌍 Canlı Önizleme:** 
+[Baz Kafe Web Sitesini Buradan İnceleyebilirsiniz](https://busra3442.github.io/BAZZ-Cafe/)
+
 
 ---
 
